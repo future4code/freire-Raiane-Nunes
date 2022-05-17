@@ -1,14 +1,7 @@
 //exercicio de interpretação1
 
 
-/*const respostaDoUsuario = prompt("Digite o número que você quer testar")
-const numero = Number(respostaDoUsuario)
 
-if (numero % 2 === 0) {
-    console.log("Passou no teste.")
-} else {
-    console.log("Não passou no teste.")
-}
 
 
 
@@ -20,8 +13,7 @@ if (numero % 2 === 0) {
 
 //exercicio de escrita de codigo
 
-*/
-let idadeDoUsuário = +prompt("qual a sua idade?")
+/*let idadeDoUsuário = +prompt("qual a sua idade?")
 
 if (idadeDoUsuário >= 18) {
     console.log("voce pode dirigir:")
@@ -89,5 +81,4 @@ if (pergunta === "fantasia" && ingresso < 15) {
 console.log("aproveite seu", lanche)
 } else {
     console.log("escolha outro filme!")
-}
-*/
+}*/
