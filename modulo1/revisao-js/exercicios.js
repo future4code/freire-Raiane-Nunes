@@ -90,32 +90,59 @@ function retornaNPrimeirosPares(n) {
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    if (ladoA === ladoB && ladoB === ladoC) {
+        return "Equilátero"
+    } else if (ladoA !== ladoC && ladoA !== ladoB && ladoB !== ladoC) {
+        return "Escaleno"
+    } else {
+        return "Isósceles"
+    }
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-
+    array.sort(
+        function name(a, b) {
+            if (a > b) return 1;
+            if (a < b) return -1;
+            return 0;
+        }
+    );
+    let maiorMenor = []
+    maiorMenor.push(array[array.length - 2])
+    maiorMenor.push(array[1])
+    return maiorMenor
 }
-
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
+    for (let i = 0; i < filme.atores.length; i++) {
+        filme.atores[i] = " " + filme.atores[i];
 
+    }
+    return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por${filme.atores}.`
 }
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-
+    let p = {
+        ...pessoa,
+        nome: "ANÔNIMO"
+    }
+    return p;
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-
+    return pessoas.filter(function(pessoa) {
+        return pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60;
+    });
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-
+    return pessoas.filter(function(pessoa) {
+        return pessoa.altura < 1.5 || pessoa.idade <= 14 || pessoa.idade >= 60;
+    });
 }
 
 // EXERCÍCIO 14
