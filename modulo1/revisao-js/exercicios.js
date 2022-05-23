@@ -147,15 +147,30 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    return contas.map(function(conta) {
+        for (const valor of conta.compras) {
+            conta.saldoTotal -= valor;
+        }
+        conta.compras = [];
+        return conta
+    });
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
+    return consultas.sort((a, b) => {
+        if (a.nome > b.nome) return 1;
+        if (a.nome < b.nome) return -1;
+        return 0;
+    });
 
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-
+    return consultas.sort((a, b) => {
+        let partsA = a.dataDaConsulta.split('/');
+        let partsB = b.dataDaConsulta.split('/');
+        return new Date(partsA[2], partsA[1] - 1, partsA[0]) - new Date(partsB[2], partsB[1] - 1, partsB[0]);
+    });
 }
