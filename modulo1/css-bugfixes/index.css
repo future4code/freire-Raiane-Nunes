@@ -19,6 +19,8 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border: none;
+    border-bottom: 8px solid;
 }
 
 button:focus {
@@ -26,16 +28,14 @@ button:focus {
 }
 
 img {
-    width: 100px;
+    width: 50px;
 }
 
 div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
+div img {}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -57,6 +57,7 @@ div img {
 
 .icone {
     height: 15px;
+    width: 15px;
 }
 
 
@@ -114,13 +115,21 @@ td button {
     color: black;
 }
 
+td button:active {
+    color: white;
+}
+
+td button:hover {
+    background-color: #f3cb19;
+    color: white;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
 }
 
 #back-button {
-    background-color: white;
     width: 100px;
     height: 20px;
     border: 1px solid black;
