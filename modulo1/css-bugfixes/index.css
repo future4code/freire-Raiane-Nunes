@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto";
 }
 
 h2 {
@@ -34,8 +35,6 @@ img {
 div>p:first-child {
     display: inline;
 }
-
-div img {}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -101,6 +100,8 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0px auto;
+    padding-top: 35px;
 }
 
 td {
@@ -136,6 +137,8 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    display: block;
+    margin: 0px auto;
 }
 
 #back-button:hover {
