@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-lateral img,
+nav img,
+footer img {
+    max-width: 20px;
+}
+
+.bolos .row,
+main,
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: normal;
+    align-content: normal;
+}
+
+nav {
+    justify-content: space-between;
+    background-color: mediumvioletred;
+    font-weight: bold;
+    padding: 7px;
+}
+
+footer {
+    background-color: mediumvioletred;
+    padding: 5px;
+}
+
+.menu-lateral {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.bolos .row .bolo {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    text-align: center;
+    margin: 5px;
+}
+
+.bolo img {
+    max-width: 300px;
+}
+
+main .menu-lateral {
+    width: 300px;
+    background-color: #f2d0e0;
+}
+
+footer {
+    text-align: center;
+}
+
+.seta {
+    margin-right: 0;
+}
+
+ul {
+    list-style: none;
+}
