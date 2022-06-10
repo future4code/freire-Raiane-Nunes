@@ -14,20 +14,40 @@ class App extends React.Component {
     return (
       <MainContainer>
         <Post
-          nomeUsuario={'paulinha'}
+          nomeUsuario={'Paulinha'}
           fotoUsuario={'https://picsum.photos/50/50?a=1'}
           fotoPost={'https://picsum.photos/200/150?a=2'}
         />
         <Post
-          nomeUsuario={'raiane'}
+          nomeUsuario={'Raiane'}
           fotoUsuario={'https://picsum.photos/50/50?a=3'}
           fotoPost={'https://picsum.photos/200/150?a=4'}
         />
         <Post
-          nomeUsuario={'diego'}
+          nomeUsuario={'Diego'}
           fotoUsuario={'https://picsum.photos/50/50?a=5'}
           fotoPost={'https://picsum.photos/200/150?a=6'}
         />
+        pessoas = [{
+            nomeUsuario = 'Paulinha',
+            fotoUsuario = 'https://picsum.photos/50/50?a=1',
+            fotoPost = 'https://picsum.photos/200/150?a=2'
+          },{
+            nomeUsuario='Raiane',
+            fotoUsuario='https://picsum.photos/50/50?a=3',
+            fotoPost='https://picsum.photos/200/150?a=4'
+          },{
+            nomeUsuario='Diego',
+            fotoUsuario='https://picsum.photos/50/50?a=5',
+            fotoPost='https://picsum.photos/200/150?a=6'
+          }  
+        ];
+        render(){
+          PostContainer this.state.pessoas
+          return(
+            <p>{nome.usuário}</p>
+          )
+        }
       </MainContainer>
     );
   }
