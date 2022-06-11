@@ -1,41 +1,70 @@
-import React from 'react';
+import React from "react";
 
-export class MessageForm extends React.Component {
-  constructor(props) {
-    super(props)
+class MessageForm extends React.Component {
+  state = {   
+    pessoas: [],
+    valorInputPessoa: "",
+    valorInputMensagem: ""
+  };
 
-    this.state = {
-      userValue: '',
-      textValue: ''
+  adicionaPessoa = () => {
+    const novaMensagem = {
+      nome: this.state.valorInputPessoa,
+      mensagem: this.state.valorInputMensagem
+    };
+    const novoMensagens = [...this.state.pessoas, novaMensagem];   
+    this.setState({ pessoas: novoMensagens,valorInputMensagem:"" });
+  };
+
+  onChangeInputPessoa = (event) => {
+    this.setState({ valorInputPessoa: event.target.value });
+  };
+
+  onChangeInputMensagem = (event) => {
+    this.setState({ valorInputMensagem: event.target.value });
+  };
+
+  onEnterMensagem = (event) =>{
+    if (event.key === 'Enter') {
+      this.adicionaPessoa();
     }
-  }
-
-  onChangeUser = (event) => {
-    this.setState({userValue: event.target.value})
-  }
-
-  onChangeText = (event) => {
-    this.setState({textValue: event.target.value})
-  }
-
-  onSendMessage = () => {
-    const message = {
-      user: this.state.userValue,
-      text: this.state.textValue
-    }
-
-    this.props.addMessage(message)
-
-    this.setState({textValue: ''})
   }
 
   render() {
+    
+    const listaDeMensagens = this.state.pessoas.map((pessoa) => {
+      return (
+        <p>
+          {pessoa.nome}: {pessoa.mensagem}
+        </p>
+      );
+    });
+
     return (
-      <div>
-        <input className='UserInput' type="text" placeholder={'Usuário'} onChange={this.onChangeUser} value={this.state.userValue}/>
-        <input className='TextInput' type="text" placeholder={'Mensagem'} onChange={this.onChangeText}  value={this.state.textValue}/>
-        <button onClick={this.onSendMessage}>Enviar</button>
+      <div className="App">
+        <h1>WhatsLab</h1>
+        <div className="AppContainer">{listaDeMensagens}</div>
+        <div>
+          <input
+            
+            value={this.state.valorInputPessoa}
+           
+            onChange={this.onChangeInputPessoa}
+            placeholder={"Usuário"}
+          />
+          <input
+            
+            value={this.state.valorInputMensagem}
+            
+            onChange={this.onChangeInputMensagem}
+            onKeyDown={this.onEnterMensagem}
+            placeholder={"Mensagem"}
+          />
+          <button onClick={this.adicionaPessoa}>Adicionar</button>
+        </div>
       </div>
     );
   }
 }
+
+export default MessageForm;
