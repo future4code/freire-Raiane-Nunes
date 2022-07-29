@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Post from "./components/Post/Post";
 
@@ -10,22 +10,36 @@ const MainContainer = styled.div`
 `;
 
 function App() {
+
+  const[posts, setPosts] = useState(
+    {
+      nomeUsuario: "Paulinha",
+      fotoUsuario: "https://picsum.photos/50/50?random=1",
+      fotoPost: "https://picsum.photos/200/150?random=2"
+    },
+    {
+      nomeUsuario: "paulinha",
+      fotoUsuario: "https://picsum.photos/50/50?random=3",
+      fotoPost: "https://picsum.photos/200/150?random=4"
+    },
+    {
+      nomeUsuario: "paulinha",
+      fotoUsuario: "https://picsum.photos/50/50?random=5",
+      fotoPost: "https://picsum.photos/200/150?random=6"
+    }
+  )
+
+  const listaDeComponentes = posts.map((post) => {
+    return (<Post
+      nomeUsuario={post.nomeUsuario}
+      fotoUsuario={post.fotoUsuario}
+      fotoPost={post.fotoPost}
+    />);
+  })
+
   return (
     <MainContainer>
-      <Post
-        nomeUsuario={"Paulinha"}
-        fotoUsuario={"https://picsum.photos/50/50?random=1"}
-        fotoPost={"https://picsum.photos/200/150?random=2"}
-      />
-      <Post
-        nomeUsuario={"Bia"}
-        fotoUsuario={"https://picsum.photos/50/50?random=3"}
-        fotoPost={"https://picsum.photos/200/150?random=4"}
-      /><Post
-        nomeUsuario={"Isadora"}
-        fotoUsuario={"https://picsum.photos/50/50?random=5"}
-        fotoPost={"https://picsum.photos/200/150?random=6"}
-      />
+      
     </MainContainer>
   );
 }
